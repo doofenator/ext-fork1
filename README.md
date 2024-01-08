@@ -44,6 +44,7 @@ Thank you to all of the contributors! Yall really are pretty epic :D
   * [SOT Exploit *OneTab bypass**](#sot-exploit)
   * [GoGuardian GoAway *GoGuardian bypass*](#goguardian-goaway-goguardian-bypass)
   * [Microsoft Labs](#microsoft-labs-virtualbox-but-it-got-20-doses-of-the-covid-vaccine*)
+  * [OP Crosh](#op-crosh-removing-extensions-with-the-power-of-crosh!*)
 
 <small><i><a href='http://github.com/3kh0/readme-toc/'>Table of contents generated with readme-toc</a></i></small>
 
@@ -731,5 +732,32 @@ Thanks a bunch Bill Gates
 NOTES: sound doesn't work, a lot of websites are blocked, but its just fun to screw around in it.
 
 (Not really) credit to mundaneunblocking
+
+[**🔼 Back to top**](#ext-remover)
+
+## OP Crosh *Removing extensions with the power of CROSH!* ##
+
+Back up any data you want before the powerwash.
+If you're doing the second variation, note down any extension IDs. You may also want to do this if you intend on disabling all extensions since sometimes that will fail and require you to specify each extension you want to disable.
+Powerwash by attempting to enable developer mode. Instructions are available here: this link
+Log into your Google account as normal, but immediately disable your internet right after you sign in.
+You should be logged into your account, but without any extensions installed due to being offline. Here the instructions are split, so follow the one for the method that you want to do.
+Disable All Extensions:
+
+Open up crosh by hitting ctr+alt+t.
+Type in vmc create-extra-disk --size 1 /home/chronos/user/Extensions
+Run that command.
+If it fails with a "file exists" error, then you must individually specify each extension that you want to remove. Move to step 5 of the next section to do that.
+Re-enable your internet, and no extensions should be installed.
+Disable Specific Extensions:
+
+Navigate to chrome://extensions.
+Enable your internet, and immediately disable it when an extension is installed.
+Assuming the installed extension was not one that you were trying to disable, move on to step 4. If it was, you'd have to powerwash to try again.
+Open up crosh by hitting ctr+alt+t.
+For each extension you want to disable, run this command: vmc create-extra-disk --size 1 /home/chronos/user/Extensions/{extension_id}
+Each command should look something like this: vmc create-extra-disk --size 1 /home/chronos/user/Extensions/cjpalhdlnbpafiamejdnhcphjbkeiagm
+Re-enable your internet, and if you typed/pasted in the extension IDs correctly, those specific extensions should be blocked from ever being installed.
+Made by vk6
 
 [**🔼 Back to top**](#ext-remover)
